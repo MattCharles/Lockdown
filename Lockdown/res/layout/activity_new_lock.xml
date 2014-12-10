@@ -1,8 +1,112 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lockdown.NewLockActivity"
-    tools:ignore="MergeRootFrame" />
+    android:gravity="center"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lockdown.NewLockActivity$PlaceholderFragment" >
 
+             <TextView
+                 android:id="@+id/titlePrompt"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:text="@string/lock_title"
+                 android:textStyle="bold" />
+             
+             <EditText
+                 android:id="@+id/title"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_alignLeft="@+id/save_button"
+                 android:layout_below="@+id/titlePrompt"
+                 android:gravity="center"
+                 android:ems="20"
+                 android:hint="@string/lock_title_hint" >
+
+                 <requestFocus />
+             </EditText>
+             
+             <TextView
+                 android:id="@+id/lockDurationPrompt"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_below="@id/title"
+                 android:gravity="center"
+                 android:layout_margin="10sp"
+                 android:text="@string/lock_unlock_time"
+                 android:textStyle="bold" />
+
+             <TimePicker
+                 android:id="@+id/timePicker"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_below="@id/lockDurationPrompt"
+                  />
+             
+             <TextView
+                 android:id="@+id/contact1Prompt"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/timePicker"
+                 android:ems="10"
+                 android:text="@string/contact1_prompt"
+                 android:textStyle="bold" />
+
+    		<Spinner
+    		    android:id="@+id/contact1Spinner"
+    		    android:layout_width="fill_parent"
+    		    android:layout_height="wrap_content"
+    		    android:layout_below="@id/contact1Prompt"
+    		    android:ems="10" />
+    		 
+    		 <TextView
+        		android:id="@+id/contact2Prompt"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_below="@id/contact1Spinner"
+        		android:textStyle="bold"
+        		android:ems="10"
+        		android:text="@string/contact2_prompt" />
+
+    		<Spinner
+        		android:id="@+id/contact2Spinner"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_below="@id/contact2Prompt" 
+        		android:ems="10"/>
+    		 
+    		 <TextView
+        		android:id="@+id/contact3Prompt"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_below="@id/contact2Spinner"
+        		android:textStyle="bold"
+        		android:ems="10"
+        		android:text="@string/contact3_prompt" />
+
+    		<Spinner
+        		android:id="@+id/contact3Spinner"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:layout_below="@id/contact3Prompt" 
+        		android:ems="10"/>
+    		
+    		<Button
+                android:id="@+id/save_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/contact3Spinner"
+                android:onClick="saveLock" 
+                android:text="@string/button_save" 
+                />
+
+</RelativeLayout>
+
+   

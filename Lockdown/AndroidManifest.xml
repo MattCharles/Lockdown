@@ -12,6 +12,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:requiredForAllUsers="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.lockdown.MainActivity"
@@ -29,6 +30,48 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.lockdown.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lockdown.LockScreenActivity"
+            android:label="@string/title_activity_lock_screen" >
+        </activity>
+
+        <receiver
+            android:name="com.lockdown.AdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.lockdown.FriendAdapter"
+            android:label="@string/title_activity_friend_adapter" >
+        </activity>
+        <activity
+            android:name="com.lockdown.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
+        </activity>
+        <activity
+            android:name="com.lockdown.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName="com.lockdown.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lockdown.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.lockdown.LockListActivity"
+            android:label="@string/title_activity_lock_list" >
+        </activity>
+        <activity
+            android:name="com.lockdown.LockerActivity"
+            android:label="@string/title_activity_locker" >
         </activity>
     </application>
 

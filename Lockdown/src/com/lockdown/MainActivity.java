@@ -65,8 +65,9 @@ public class MainActivity extends ActionBarActivity {
 	 */
 	 public void newLock( View view ) {
 		 //TODO: send user to complete lock creation
-		 Intent intent = new Intent(this, NewLockActivity.class);
+		 Intent intent = new Intent(this, LoginActivity.class);
 		 startActivity(intent);
-	 }
-
+		 finish();
+	 } 
+	 
 }
